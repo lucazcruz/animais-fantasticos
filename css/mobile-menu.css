@@ -1,0 +1,54 @@
+[data-menu="button"] {
+    display: none;
+    position: relative;
+    z-index: 201; 
+}
+
+@media(max-width:700px) {
+    .js [data-menu="button"] {
+        border: none;
+        background: #000;
+        color: #fff;
+        padding: .5rem 1rem;
+        font-family: 'IBM Plex Mono', monospace;
+        border-radius: 4px;
+        text-transform: uppercase;
+        
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        cursor: pointer;
+    }
+    .js [data-menu="button"]::before {
+        content: '';
+        display: inline-block;
+        height: 2px;
+        width: 10px;
+        background: #fff;
+        box-shadow: 0 4px 0 #fff, 0 -4px 0 #fff;
+        transition: transform .3s;
+    }
+    
+    .js [data-menu="button"].ativo::before {
+        transform: rotate(90deg);
+    }
+    .js [data-menu="list"] {
+        position: absolute;
+        z-index: 200;
+        top: 0;
+        left: 0;
+        padding: 60px 20px 0 0;
+        background: #fb5;
+        display: none;
+        width: 160px;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, .4);
+    }
+    .js [data-menu="list"].ativo {
+        display: block;
+    }
+    [data-menu="sobre"] ul {
+        position: static;
+        width: 160px;
+        border: none;
+    }
+}
