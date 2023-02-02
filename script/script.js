@@ -1,7 +1,6 @@
 import SmoothScroll from './modules/scroll-smooth.js';
+import Accordion from './modules/accordion-list.js';
 
-import accordionInit from './modules/accordion-list.js';
-import scrollAnimationInit from './modules/scroll-animation.js';
 import tabMenuInit from './modules/tab-menu.js';
 import tooltipInit from './modules/tooltip.js';
 import modalInit from './modules/modal.js';
@@ -10,12 +9,14 @@ import mobileMenuInit from './modules/mobile-menu.js';
 import fecthBitcoinInit from './modules/fetch-bitcoin.js';
 import openClosed from './modules/horario.js';
 import animaisApiInit from './modules/fetch-animais.js';
+import scrollAnimationInit from './modules/scroll-animation.js';
 
 const smoothScroll = new SmoothScroll('.header-menu a[href^="#"]');
 smoothScroll.init();
 
-accordionInit();
-scrollAnimationInit();
+const accordion = new Accordion('[data-accordion="list"] dt');
+accordion.init();
+
 tabMenuInit();
 tooltipInit();
 modalInit();
@@ -24,3 +25,4 @@ mobileMenuInit();
 fecthBitcoinInit();
 openClosed();
 animaisApiInit();
+scrollAnimationInit();
