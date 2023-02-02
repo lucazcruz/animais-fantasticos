@@ -1,0 +1,27 @@
+{
+  "name": "animais-fantasticos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch ./script/script.js -o ./",
+    "build": "webpack --mode production ./script/script.js -o ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucazcruz/animais-fantasticos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucazcruz/animais-fantasticos/issues"
+  },
+  "homepage": "https://github.com/lucazcruz/animais-fantasticos#readme",
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
