@@ -1,7 +1,7 @@
 import SmoothScroll from './modules/scroll-smooth.js';
 import Accordion from './modules/accordion-list.js';
+import TabMenu from './modules/tab-menu.js';
 
-import tabMenuInit from './modules/tab-menu.js';
 import tooltipInit from './modules/tooltip.js';
 import modalInit from './modules/modal.js';
 import openMenuInit from './modules/down-sobre.js';
@@ -17,7 +17,9 @@ smoothScroll.init();
 const accordion = new Accordion('[data-accordion="list"] dt');
 accordion.init();
 
-tabMenuInit();
+const tabMenu = new TabMenu('[data-menu="tab"] li', '[data-menu="content"] section');
+tabMenu.init();
+
 tooltipInit();
 modalInit();
 openMenuInit();
