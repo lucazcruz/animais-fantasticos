@@ -3,8 +3,8 @@ import Accordion from './modules/accordion-list.js';
 import TabMenu from './modules/tab-menu.js';
 import Modal from './modules/modal.js';
 import fetchAnimais from './modules/fetch-animais.js';
+import Tooltip from './modules/tooltip.js';
 
-import tooltipInit from './modules/tooltip.js';
 import openMenuInit from './modules/down-sobre.js';
 import mobileMenuInit from './modules/mobile-menu.js';
 import fecthBitcoinInit from './modules/fetch-bitcoin.js';
@@ -23,7 +23,9 @@ tabMenu.init();
 const modal = new Modal('[data-modal="open"]', '[data-modal="close"]', '[data-modal="container"]');
 modal.init();
 
-tooltipInit();
+const tooltip = new Tooltip('[data-tooltip]');
+tooltip.init();
+
 openMenuInit();
 mobileMenuInit();
 fecthBitcoinInit();
