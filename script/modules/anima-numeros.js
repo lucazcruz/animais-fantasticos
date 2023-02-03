@@ -1,29 +1,43 @@
-export default function animaNumeros() {
-  function animaNum() {
-    const numeros = document.querySelectorAll('[data-numero]');
-
-    numeros.forEach((numero) => {
-      const num = numero.innerText;
-      const incremento = Math.floor(num / 100);
-
-      let i = 0;
-      const interval = setInterval(() => {
-        i += incremento;
-        numero.innerText = i;
-        if (i > num) {
-          clearInterval(interval);
-          numero.innerText = num;
-        }
-      }, Math.random() * 25);
-    });
+export default class AnimaNumeros {
+  constructor(numeros, observerTarget, observerClass) {
+    this.numeros = document.querySelectorAll(numeros);
+    this.observerTarget = document.querySelector(observerTarget);
+    this.observerClass = observerClass;
+    this.handleMutation = this.handleMutation.bind(this);
   }
 
-  function callback() {
-    animaNum();
-    observer.disconnect();
+  static incrementarNumero(numero) {
+    const total = numero.innerText;
+    const incremento = Math.floor(total / 100);
+    let start = 0;
+    const interval = setInterval(() => {
+      start += incremento;
+      numero.innerText = start;
+      if (start > total) {
+        clearInterval(interval);
+        numero.innerText = total;
+      }
+    }, Math.random() * 25);
   }
 
-  const observer = new MutationObserver(callback);
-  const target = document.querySelector('#numeros');
-  observer.observe(target, { attributes: true });
+  animaNumeros() {
+    this.numeros.forEach((numero) => AnimaNumeros.incrementarNumero(numero));
+  }
+
+  handleMutation(mutation) {
+    if (mutation[0].target.classList.contains(this.observerClass)) {
+      this.observer.disconnect();
+      this.animaNumeros();
+    }
+  }
+
+  addMutationObserver() {
+    this.observer = new MutationObserver(this.handleMutation);
+    this.observer.observe(this.observerTarget, { attributes: true });
+  }
+
+  init() {
+    this.addMutationObserver();
+    return this;
+  }
 }
