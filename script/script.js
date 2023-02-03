@@ -3,11 +3,11 @@ import Accordion from './modules/accordion-list.js';
 import TabMenu from './modules/tab-menu.js';
 import Modal from './modules/modal.js';
 import fetchAnimais from './modules/fetch-animais.js';
+import fecthBitcoin from './modules/fetch-bitcoin.js';
 import Tooltip from './modules/tooltip.js';
 
 import openMenuInit from './modules/down-sobre.js';
 import mobileMenuInit from './modules/mobile-menu.js';
-import fecthBitcoinInit from './modules/fetch-bitcoin.js';
 import openClosed from './modules/horario.js';
 import scrollAnimationInit from './modules/scroll-animation.js';
 
@@ -28,8 +28,9 @@ tooltip.init();
 
 openMenuInit();
 mobileMenuInit();
-fecthBitcoinInit();
 openClosed();
 scrollAnimationInit();
 
 fetchAnimais('./animaisapi.json', '.grid-numeros');
+
+fecthBitcoin('https://blockchain.info/ticker', '[data-price="bitcoin"]');
