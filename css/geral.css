@@ -104,18 +104,18 @@ img {
     margin-bottom: 16px;
 }
 
-.grid-animais {
+.grid-numeros {
     grid-column: 2/4;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
-.grid-animais h3 {
+.grid-numeros h3 {
     font-family: 'Playfair Display SC', serif;
     font-size: 2rem;
     margin-bottom: 8px;
 }
-.grid-animais span {
+.grid-numeros span {
     color: #E54;
     font-size: 1.5rem;
     font-weight: bold;
