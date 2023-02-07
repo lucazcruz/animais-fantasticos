@@ -46,7 +46,7 @@
     .js [data-menu="list"].ativo {
         display: block;
     }
-    [data-menu="sobre"] ul {
+    [data-dropdown] ul {
         position: static;
         width: 160px;
         border: none;
