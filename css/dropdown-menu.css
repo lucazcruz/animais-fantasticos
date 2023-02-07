@@ -2,7 +2,7 @@
     position: relative;
     z-index: 50;
 }
-[data-menu="sobre"] ul{
+[data-dropdown] ul{
     position: absolute;
     /* z-index: 50; */
     flex-direction: column;
@@ -12,16 +12,16 @@
     display: none;
 }
 
-[data-menu="sobre"]:hover ul,
-[data-menu="sobre"] ul.ativo {
+[data-dropdown]:hover ul,
+[data-dropdown].ativo ul {
     display: block;
 }
 
-[data-menu="sobre"] ul li:hover {
+[data-dropdown] ul li:hover {
     color: #fff;
 }
 
-[data-menu="sobre"] ul::before {
+[data-dropdown] ul::before {
     content: '';
     display: block;
     height: 0px;
@@ -46,7 +46,7 @@
 }
 
 @media (max-width: 700px) {
-    [data-menu="sobre"] ul {
+    [data-dropdown] ul {
         position: static;
         width: 160px;
         border: none;

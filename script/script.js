@@ -6,8 +6,8 @@ import fetchAnimais from './modules/fetch-animais.js';
 import fecthBitcoin from './modules/fetch-bitcoin.js';
 import Tooltip from './modules/tooltip.js';
 import ScrollAnima from './modules/scroll-anima.js';
+import DropdownMenu from './modules/dropdown-menu.js';
 
-import openMenuInit from './modules/down-sobre.js';
 import mobileMenuInit from './modules/mobile-menu.js';
 import openClosed from './modules/horario.js';
 
@@ -29,7 +29,9 @@ tooltip.init();
 const scrollAnima = new ScrollAnima('[data-animation="scroll"]');
 scrollAnima.init();
 
-openMenuInit();
+const dropdownMenu = new DropdownMenu('[data-dropdown]');
+dropdownMenu.init();
+
 mobileMenuInit();
 openClosed();
 
