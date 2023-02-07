@@ -1,18 +1,31 @@
 import closeMenu from './close-menu.js';
 
-export default function mobileMenuInit() {
-  const menuButton = document.querySelector('[data-menu="button"]');
-  const menuList = document.querySelector('[data-menu="list"]');
-  const events = ['touchstart', 'click'];
+export default class MobileMenu {
+  constructor(menuButton, menuList, events) {
+    this.menuButton = document.querySelector(menuButton);
+    this.menuList = document.querySelector(menuList);
 
-  function openMenu() {
-    menuList.classList.add('ativo');
-    menuButton.classList.add('ativo');
-    closeMenu(menuList, events, () => {
-      menuList.classList.remove('ativo');
-      menuButton.classList.remove('ativo');
+    if (events === undefined) this.events = ['touchstart', 'click'];
+    else this.events = events;
+
+    this.openMenu = this.openMenu.bind(this);
+  }
+
+  openMenu() {
+    this.menuList.classList.add('ativo');
+    this.menuButton.classList.add('ativo');
+    closeMenu(this.menuList, this.events, () => {
+      this.menuList.classList.remove('ativo');
+      this.menuButton.classList.remove('ativo');
     });
   }
 
-  events.forEach((event) => menuButton.addEventListener(event, openMenu));
+  addMenuEvents() {
+    this.events.forEach((event) => this.menuButton.addEventListener(event, this.openMenu));
+  }
+
+  init() {
+    this.addMenuEvents();
+    return this;
+  }
 }
