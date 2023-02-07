@@ -7,8 +7,8 @@ import fecthBitcoin from './modules/fetch-bitcoin.js';
 import Tooltip from './modules/tooltip.js';
 import ScrollAnima from './modules/scroll-anima.js';
 import DropdownMenu from './modules/dropdown-menu.js';
+import MobileMenu from './modules/mobile-menu.js';
 
-import mobileMenuInit from './modules/mobile-menu.js';
 import openClosed from './modules/horario.js';
 
 const smoothScroll = new SmoothScroll('.header-menu a[href^="#"]');
@@ -32,7 +32,9 @@ scrollAnima.init();
 const dropdownMenu = new DropdownMenu('[data-dropdown]');
 dropdownMenu.init();
 
-mobileMenuInit();
+const menuMobile = new MobileMenu('[data-menu="button"]', '[data-menu="list"]');
+menuMobile.init();
+
 openClosed();
 
 fetchAnimais('./animaisapi.json', '.grid-numeros');
