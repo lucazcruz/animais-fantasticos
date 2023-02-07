@@ -8,8 +8,7 @@ import Tooltip from './modules/tooltip.js';
 import ScrollAnima from './modules/scroll-anima.js';
 import DropdownMenu from './modules/dropdown-menu.js';
 import MobileMenu from './modules/mobile-menu.js';
-
-import openClosed from './modules/horario.js';
+import Funcionamento from './modules/funcionamento.js';
 
 const smoothScroll = new SmoothScroll('.header-menu a[href^="#"]');
 smoothScroll.init();
@@ -35,7 +34,8 @@ dropdownMenu.init();
 const menuMobile = new MobileMenu('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
-openClosed();
+const funcionamento = new Funcionamento('[data-horario]');
+funcionamento.init();
 
 fetchAnimais('./animaisapi.json', '.grid-numeros');
 
