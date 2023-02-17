@@ -7,7 +7,7 @@
     top: 0;
     height: 100vh;
     width: 100vw;
-    z-index: 100;
+    z-index: 200;
 
     display: none;
     justify-content: center;
@@ -17,7 +17,8 @@
 .modal {
     position: relative;
     background-color: #fff;
-    min-width: 300px;
+    width: 85vw;
+    max-width: 300px;
     font-family: 'IBM Plex Mono', monospace;
     padding: 40px;
     border: 10px solid #fb5;
@@ -50,14 +51,12 @@
 }
 
 .modal .close {
-    background-color: #f0f0f0;
+    background: #f0f0f0 url('../img/fechar.svg') no-repeat center center;
     border: 2px solid #fb5;
     width: 45px;
     height: 45px;
-    font-weight: bold;
-    font-family: inherit;
-    font-size: 1rem;
     cursor: pointer;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .3);
 
     position: absolute;
     top: -30px;

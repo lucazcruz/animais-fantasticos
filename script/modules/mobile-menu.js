@@ -11,7 +11,8 @@ export default class MobileMenu {
     this.openMenu = this.openMenu.bind(this);
   }
 
-  openMenu() {
+  openMenu(event) {
+    event.preventDefault();
     this.menuList.classList.add('ativo');
     this.menuButton.classList.add('ativo');
     closeMenu(this.menuList, this.events, () => {
