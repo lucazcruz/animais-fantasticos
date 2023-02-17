@@ -1,13 +1,14 @@
 .js .tooltip {
     color: #ffffff;
     font-weight: bold;
-    background: rgba(0, 0, 0, .5);
-    width: 155px;
+    background: rgba(0, 0, 0, .6);
+    box-shadow: 0 0 0 2px #FB5, 0 0 0 4px rgba(0,0,0,.6);
+    width: 170px;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 0.875rem;
-    padding: 5px;
-    border: 2px solid #FB5;
+    font-weight: bold;
+    padding: .5rem;
     display: block;
     position: absolute;
-    top: 375px;
-    left: 375px;
+    border-radius: 4px;
 }

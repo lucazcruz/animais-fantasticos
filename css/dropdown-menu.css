@@ -47,8 +47,6 @@
 
 @media (max-width: 700px) {
     [data-dropdown] ul {
-        position: static;
-        width: 160px;
-        border: none;
+      display: block;
     }
 }

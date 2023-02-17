@@ -1,7 +1,7 @@
 [data-menu="button"] {
     display: none;
     position: relative;
-    z-index: 201; 
+    z-index: 101; 
 }
 
 @media(max-width:700px) {
@@ -34,7 +34,7 @@
     }
     .js [data-menu="list"] {
         position: absolute;
-        z-index: 200;
+        z-index: 100;
         top: 0;
         left: 0;
         padding: 60px 20px 0 0;
