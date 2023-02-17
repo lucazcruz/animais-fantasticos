@@ -9,6 +9,7 @@ import ScrollAnima from './modules/scroll-anima.js';
 import DropdownMenu from './modules/dropdown-menu.js';
 import MobileMenu from './modules/mobile-menu.js';
 import Funcionamento from './modules/funcionamento.js';
+import SlideNav from './modules/slide.js';
 
 const smoothScroll = new SmoothScroll('.header-menu a[href^="#"]');
 smoothScroll.init();
@@ -40,3 +41,8 @@ funcionamento.init();
 fetchAnimais('./animaisapi.json', '.grid-numeros');
 
 fecthBitcoin('https://blockchain.info/ticker', '[data-price="bitcoin"]');
+
+const slide = new SlideNav('.slide-wrapper', '.slide');
+slide.init();
+slide.addArrow('.prev', '.next');
+slide.addControl('.custom-control');
