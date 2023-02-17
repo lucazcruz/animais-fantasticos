@@ -1,0 +1,76 @@
+.galeria {
+  grid-column: 1/-1;
+}
+
+.slide-wrapper {
+  overflow: hidden;
+  grid-column: 1/-1;
+}
+
+.slide {
+  display: flex;
+  gap: 20px;
+}
+
+.slide:hover {
+  will-change: transform;
+}
+
+.slide li {
+  flex-shrink: 0;
+  width: 800px;
+  max-width: 80vw;
+  cursor: pointer;
+  
+  opacity: .8;
+  transform: scale(.8);
+  transition: .4s;
+}
+
+.slide li.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.custom-control {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.custom-control li {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+
+  opacity: .8;
+  transform: scale(.8);
+  transition: .3s;
+}
+
+.custom-control li.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.arrow-nav {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.arrow-nav button {
+  height: 40px;
+  width: 40px;
+  background: #fb5 url('../img/slide/arrow.svg') no-repeat center center;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.arrow-nav button.prev {
+  transform: rotate(180deg);
+}
